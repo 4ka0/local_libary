@@ -1,2 +1,3 @@
-# local_libary
-Mozilla Django tutorial
+Mozilla Django tutorial<br/>
+
+(https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django)
