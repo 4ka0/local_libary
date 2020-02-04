@@ -14,12 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
-from django.contrib import admin
-from django.urls import include
+
 from django.urls import path
-from django.views.generic import RedirectView
+from django.urls import include
 from django.conf import settings
+from django.contrib import admin
 from django.conf.urls.static import static
+from django.views.generic import RedirectView
 
 
 '''
@@ -32,8 +33,8 @@ to the URL '127.0.0.1:8000/catalog/' since the catalog app is the only
 app in this project.
 
 The final '+ static ...' line enables the serving of static files during 
-development  like CSS, JavaScript, and images, which is ordinarily disabled 
-by default.
+development such as CSS, JavaScript, and images (this is ordinarily disabled 
+by default).
 '''
 
 urlpatterns = [
