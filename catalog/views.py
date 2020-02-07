@@ -1,9 +1,25 @@
 from django.shortcuts import render
 from catalog.models import Book, Author, BookInstance, Genre
+from django.views import generic  # used to implement a class-based view
+
+
+class BookListView(generic.ListView):
+    """ 
+    Used to implement a page listing all books.
+    The generic view will query the database to get all records 
+    for the specified model (Book).
+    """
+    model = Book
+
+
+class BookDetailView(generic.DetailView):
+    model = Book
 
 
 def index(request):
-    """View function for home page of site."""
+    """ 
+    View function for the home page of the site. 
+    """
 
     # Generate counts of some of the main objects
     num_books = Book.objects.all().count()

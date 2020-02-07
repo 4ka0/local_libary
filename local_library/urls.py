@@ -40,5 +40,5 @@ by default).
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('catalog/', include('catalog.urls')),
-    path('', RedirectView.as_view(url='catalog/', permanent=True)),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path('', RedirectView.as_view(url='catalog/', permanent=True)),  # sets catalog as the base url
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)  # loads static content during development
