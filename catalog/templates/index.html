@@ -5,9 +5,10 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Local Library Home</h1>
+
+    <h2>Local Library Home</h2>
     <p>Welcome to the Local Library, a website developed by Jon based on the <em>Mozilla Developer Network</em> tutorial</p>
-    <h2>Current library stock</h2>
+    <h4>Current library stock</h4>
     <p>The library has the following record counts:</p>
     <ul>
         <li><strong>Books:</strong> {{ num_books }}</li>
@@ -17,4 +18,9 @@
         <li><strong>Genres:</strong> {{ genre_instances }}</li>
         <li><strong>Japan-related books:</strong> {{ japan_books_available }}</li>
     </ul>
+    <p>You have visited this page {{ num_visits }}
+       {% if num_visits == 1 %} time
+       {% else %} times
+       {% endif %}.</p>
+
 {% endblock %}

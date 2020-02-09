@@ -47,6 +47,10 @@ def index(request):
     # The number of books with a title including the word 'japan'
     japan_books_available = Book.objects.filter(title__icontains='japan').count()
 
+    # Number of visits to this view, as counted in the session variable.
+    num_visits = request.session.get('num_visits', 0)
+    request.session['num_visits'] = num_visits + 1
+
     context = {
         'num_books': num_books,
         'num_instances': num_instances,
@@ -54,6 +58,7 @@ def index(request):
         'num_authors': num_authors,
         'genre_instances': genre_instances,
         'japan_books_available': japan_books_available,
+        'num_visits': num_visits,
     }
 
     # Render the HTML template index.html with the data in the context variable
